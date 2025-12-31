@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hooked on Moogle</title>
+    <title>Hooked on Kupo</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Press Start 2P', monospace; background: #000; image-rendering: pixelated; }
+        body { font-family: 'Press Start 2P', monospace; background: #F8F8F8; image-rendering: pixelated; }
         
         .page {
             width: 8.5in;
             height: 11in;
-            background: #000;
+            background: #FFF;
             margin: 0 auto 20px;
             padding: 0.5in;
             page-break-after: always;
@@ -23,14 +23,14 @@
             .page { margin: 0; }
         }
         
-        /* FF-style text boxes with authentic colors */
+        /* FF-style text boxes with printer-friendly colors */
         .ff-window {
-            background: #1828A8;
-            border: 4px solid #FFF;
+            background: #E8F0FF;
+            border: 4px solid #1828A8;
             box-shadow: 
-                inset 0 0 0 2px #000,
-                inset 0 0 0 4px #7890D8,
-                4px 4px 0 #000;
+                inset 0 0 0 2px #FFF,
+                inset 0 0 0 4px #5070C0,
+                4px 4px 0 #1828A8;
             padding: 16px;
             position: relative;
         }
@@ -42,17 +42,16 @@
             left: 0;
             right: 0;
             height: 50%;
-            background: linear-gradient(180deg, rgba(120,144,216,0.3) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
             pointer-events: none;
         }
         
         /* Authentic FF text styling */
         .ff-text {
-            color: #FFF;
+            color: #1828A8;
             font-family: 'Press Start 2P', monospace;
             font-size: 11px;
             line-height: 1.8;
-            text-shadow: 2px 2px 0 #000;
         }
         
         .ff-text-large {
@@ -61,8 +60,7 @@
         }
         
         .ff-text-yellow {
-            color: #F8F888;
-            text-shadow: 2px 2px 0 #000;
+            color: #C09000;
         }
         
         /* Page footer */
@@ -74,9 +72,9 @@
             display: flex;
             justify-content: space-between;
             padding: 8px 12px;
-            background: #1828A8;
-            border: 3px solid #FFF;
-            box-shadow: inset 0 0 0 2px #000;
+            background: #E8F0FF;
+            border: 3px solid #1828A8;
+            box-shadow: inset 0 0 0 2px #FFF;
         }
         
         .page-footer .ff-text {
@@ -90,33 +88,31 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            background: #000;
+            background: #FFF;
         }
         
         .title-box {
-            background: #1828A8;
-            border: 6px solid #FFF;
+            background: #E8F0FF;
+            border: 6px solid #1828A8;
             box-shadow: 
-                inset 0 0 0 3px #000,
-                inset 0 0 0 6px #7890D8,
-                6px 6px 0 #000;
+                inset 0 0 0 3px #FFF,
+                inset 0 0 0 6px #5070C0,
+                6px 6px 0 #1828A8;
             padding: 30px 40px;
             text-align: center;
             margin: 20px 0;
         }
         
         .title-box h1 {
-            color: #F8F888;
+            color: #C09000;
             font-size: 24px;
-            text-shadow: 3px 3px 0 #000;
             margin-bottom: 15px;
             line-height: 1.4;
         }
         
         .title-box .subtitle {
-            color: #FFF;
+            color: #1828A8;
             font-size: 10px;
-            text-shadow: 2px 2px 0 #000;
             line-height: 1.6;
         }
         
@@ -127,9 +123,9 @@
         }
         
         .name-box {
-            background: #1828A8;
-            border: 4px solid #FFF;
-            box-shadow: inset 0 0 0 2px #000;
+            background: #E8F0FF;
+            border: 4px solid #1828A8;
+            box-shadow: inset 0 0 0 2px #FFF;
             padding: 12px 20px;
             margin-top: 30px;
         }
@@ -139,7 +135,7 @@
         }
         
         .name-line {
-            border-bottom: 2px solid #F8F888;
+            border-bottom: 2px solid #C09000;
             display: inline-block;
             min-width: 200px;
             margin-left: 10px;
@@ -147,14 +143,14 @@
         
         /* Letter intro pages */
         .letter-page {
-            background: #000;
+            background: #FFF;
             padding: 20px;
         }
         
         .letter-display {
-            background: #1828A8;
-            border: 5px solid #FFF;
-            box-shadow: inset 0 0 0 3px #000, 5px 5px 0 #000;
+            background: #E8F0FF;
+            border: 5px solid #1828A8;
+            box-shadow: inset 0 0 0 3px #FFF, 5px 5px 0 #1828A8;
             padding: 30px;
             text-align: center;
             margin: 20px 0;
@@ -163,14 +159,12 @@
         .big-letter {
             font-size: 120px;
             line-height: 1;
-            text-shadow: 4px 4px 0 #000;
             display: inline-block;
         }
         
         .small-letter {
             font-size: 80px;
             margin-left: 15px;
-            text-shadow: 3px 3px 0 #000;
             display: inline-block;
             vertical-align: baseline;
         }
@@ -192,9 +186,9 @@
         }
         
         .item-box {
-            background: #1828A8;
-            border: 4px solid #FFF;
-            box-shadow: inset 0 0 0 2px #000, 4px 4px 0 #000;
+            background: #E8F0FF;
+            border: 4px solid #1828A8;
+            box-shadow: inset 0 0 0 2px #FFF, 4px 4px 0 #1828A8;
             padding: 15px;
             text-align: center;
         }
@@ -208,9 +202,8 @@
         }
         
         .item-box .word {
-            color: #FFF;
+            color: #1828A8;
             font-size: 10px;
-            text-shadow: 2px 2px 0 #000;
         }
         
         /* Matching */
@@ -225,15 +218,14 @@
         }
         
         .match-box {
-            background: #1828A8;
-            border: 4px solid #FFF;
-            box-shadow: inset 0 0 0 2px #000;
+            background: #E8F0FF;
+            border: 4px solid #1828A8;
+            box-shadow: inset 0 0 0 2px #FFF;
             padding: 15px;
             margin: 10px 0;
             text-align: center;
-            color: #F8F888;
+            color: #C09000;
             font-size: 32px;
-            text-shadow: 3px 3px 0 #000;
         }
         
         .match-middle {
@@ -247,15 +239,15 @@
         .match-dot {
             width: 12px;
             height: 12px;
-            background: #FFF;
+            background: #1828A8;
             margin: 30px 0;
         }
         
         /* CVC section */
         .cvc-display {
-            background: #1828A8;
-            border: 5px solid #FFF;
-            box-shadow: inset 0 0 0 3px #000, 5px 5px 0 #000;
+            background: #E8F0FF;
+            border: 5px solid #1828A8;
+            box-shadow: inset 0 0 0 3px #FFF, 5px 5px 0 #1828A8;
             padding: 25px;
             text-align: center;
             margin: 20px 0;
@@ -271,12 +263,11 @@
             display: inline-block;
             padding: 5px 12px;
             margin: 0 3px;
-            text-shadow: 3px 3px 0 #000;
         }
         
-        .cvc-word .letter-m { color: #5898F8; }
-        .cvc-word .letter-o { color: #F8C858; }
-        .cvc-word .letter-g { color: #78C850; }
+        .cvc-word .letter-m { color: #2858D8; }
+        .cvc-word .letter-o { color: #C09000; }
+        .cvc-word .letter-g { color: #489030; }
         
         .sound-breakdown {
             display: flex;
@@ -297,8 +288,7 @@
         
         .sound-phoneme {
             font-size: 12px;
-            color: #F8F888;
-            text-shadow: 2px 2px 0 #000;
+            color: #C09000;
         }
         
         /* Letter hunt */
@@ -313,26 +303,25 @@
         .hunt-box {
             width: 45px;
             height: 45px;
-            background: #1828A8;
-            border: 3px solid #7890D8;
+            background: #E8F0FF;
+            border: 3px solid #5070C0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FFF;
+            color: #1828A8;
             font-size: 24px;
-            text-shadow: 2px 2px 0 #000;
         }
         
         .hunt-box.target {
-            border-color: #F8F888;
-            background: #2838B8;
+            border-color: #C09000;
+            background: #FFF8E0;
         }
         
         /* Tracing */
         .trace-area {
-            background: #1828A8;
-            border: 4px solid #FFF;
-            box-shadow: inset 0 0 0 2px #000;
+            background: #E8F0FF;
+            border: 4px solid #1828A8;
+            box-shadow: inset 0 0 0 2px #FFF;
             padding: 15px;
             margin: 15px 0;
         }
@@ -344,34 +333,18 @@
         
         .trace-letter {
             font-size: 60px;
-            color: #404878;
+            color: #B0C0E0;
             letter-spacing: 12px;
-            text-shadow: none;
-        }
-        
-        /* HP/MP style bars */
-        .progress-bar {
-            background: #000;
-            border: 2px solid #FFF;
-            height: 8px;
-            margin: 10px auto;
-            width: 200px;
-            position: relative;
-        }
-        
-        .progress-fill {
-            background: #78C850;
-            height: 100%;
-            width: 0%;
         }
     </style>
 </head>
 <body>
+
     <!-- PAGE 1: Cover -->
     <div class="page">
         <div class="cover">
             <div class="title-box">
-                <h1>HOOKED ON<br>MOOGLE</h1>
+                <h1>HOOKED ON<br>KUPO</h1>
                 <p class="subtitle">A PHONICS QUEST<br>FOR YOUNG HEROES</p>
             </div>
             <img src="../assets/moogles/moogle-welcome.png" alt="Moogle">
@@ -389,8 +362,8 @@
             <p class="ff-text ff-text-yellow">LETTER M</p>
         </div>
         <div class="letter-display" style="margin-top: 15px;">
-            <span class="big-letter" style="color: #5898F8;">M</span>
-            <span class="small-letter" style="color: #5898F8;">m</span>
+            <span class="big-letter" style="color: #2858D8;">M</span>
+            <span class="small-letter" style="color: #2858D8;">m</span>
         </div>
         <div class="ff-window" style="margin-top: 15px;">
             <p class="ff-text">M IS FOR MOOGLE</p>
@@ -402,7 +375,7 @@
             <div class="trace-line"><span class="trace-letter">m m m</span></div>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">02</span>
         </div>
     </div>
@@ -436,7 +409,7 @@
             <p class="ff-text ff-text-yellow">KUPO!</p>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">03</span>
         </div>
     </div>
@@ -448,8 +421,8 @@
             <p class="ff-text ff-text-yellow">LETTER O</p>
         </div>
         <div class="letter-display" style="margin-top: 15px;">
-            <span class="big-letter" style="color: #F8C858;">O</span>
-            <span class="small-letter" style="color: #F8C858;">o</span>
+            <span class="big-letter" style="color: #C09000;">O</span>
+            <span class="small-letter" style="color: #C09000;">o</span>
         </div>
         <div class="ff-window" style="margin-top: 15px;">
             <p class="ff-text">O IS FOR ORB</p>
@@ -461,7 +434,7 @@
             <div class="trace-line"><span class="trace-letter">o o o</span></div>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">04</span>
         </div>
     </div>
@@ -495,7 +468,7 @@
             <p class="ff-text ff-text-yellow">EXCELLENT!</p>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">05</span>
         </div>
     </div>
@@ -507,8 +480,8 @@
             <p class="ff-text ff-text-yellow">LETTER G</p>
         </div>
         <div class="letter-display" style="margin-top: 15px;">
-            <span class="big-letter" style="color: #78C850;">G</span>
-            <span class="small-letter" style="color: #78C850;">g</span>
+            <span class="big-letter" style="color: #489030;">G</span>
+            <span class="small-letter" style="color: #489030;">g</span>
         </div>
         <div class="ff-window" style="margin-top: 15px;">
             <p class="ff-text">G IS FOR GIL</p>
@@ -520,7 +493,7 @@
             <div class="trace-line"><span class="trace-letter">g g g</span></div>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">06</span>
         </div>
     </div>
@@ -554,7 +527,7 @@
             <p class="ff-text ff-text-yellow">GREAT JOB!</p>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">07</span>
         </div>
     </div>
@@ -584,7 +557,7 @@
             </div>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">08</span>
         </div>
     </div>
@@ -596,8 +569,8 @@
             <p class="ff-text ff-text-yellow">LETTER K</p>
         </div>
         <div class="letter-display" style="margin-top: 15px;">
-            <span class="big-letter" style="color: #C858F8;">K</span>
-            <span class="small-letter" style="color: #C858F8;">k</span>
+            <span class="big-letter" style="color: #9858C8;">K</span>
+            <span class="small-letter" style="color: #9858C8;">k</span>
         </div>
         <div class="ff-window" style="margin-top: 15px;">
             <p class="ff-text">K IS FOR KUPO</p>
@@ -609,7 +582,7 @@
             <div class="trace-line"><span class="trace-letter">k k k</span></div>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">09</span>
         </div>
     </div>
@@ -643,7 +616,7 @@
             <p class="ff-text ff-text-yellow">AMAZING!</p>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">10</span>
         </div>
     </div>
@@ -658,15 +631,15 @@
         <div class="cvc-display" style="margin-top: 20px;">
             <div class="sound-breakdown">
                 <div class="sound-item">
-                    <span class="sound-letter" style="color: #5898F8;">M</span>
+                    <span class="sound-letter" style="color: #2858D8;">M</span>
                     <span class="sound-phoneme">/mmm/</span>
                 </div>
                 <div class="sound-item">
-                    <span class="sound-letter" style="color: #F8C858;">O</span>
+                    <span class="sound-letter" style="color: #C09000;">O</span>
                     <span class="sound-phoneme">/ah/</span>
                 </div>
                 <div class="sound-item">
-                    <span class="sound-letter" style="color: #78C850;">G</span>
+                    <span class="sound-letter" style="color: #489030;">G</span>
                     <span class="sound-phoneme">/g/</span>
                 </div>
             </div>
@@ -679,7 +652,7 @@
             <p class="ff-text ff-text-yellow" style="margin-top: 6px;">MOG!</p>
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">11</span>
         </div>
     </div>
@@ -714,10 +687,10 @@
             <p class="ff-text" style="margin-top: 6px; font-size: 9px;">KUPO KUPO!</p>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <img src="../assets/moogles/moogle-welcome.png" alt="Victory Moogle" style="max-width: 140px; opacity: 0.3; border: 3px dashed #7890D8; padding: 6px;">
+            <img src="../assets/moogles/moogle-welcome.png" alt="Victory Moogle" style="max-width: 140px; opacity: 0.3; border: 3px dashed #5070C0; padding: 6px;">
         </div>
         <div class="page-footer">
-            <span class="ff-text">HOOKED ON MOOGLE</span>
+            <span class="ff-text">HOOKED ON KUPO</span>
             <span class="ff-text ff-text-yellow">12</span>
         </div>
     </div>
