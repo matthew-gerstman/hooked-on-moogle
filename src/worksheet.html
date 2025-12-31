@@ -7,16 +7,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Fredoka+One&display=swap');
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: #f5f5f5;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: #f5f5f5; }
         
         .page {
             width: 8.5in;
@@ -31,815 +23,444 @@
         
         @media print {
             body { background: white; }
-            .page {
-                margin: 0;
-                box-shadow: none;
-                page-break-after: always;
-            }
+            .page { margin: 0; box-shadow: none; }
         }
         
-        /* Typography */
-        h1 {
-            font-family: 'Fredoka One', cursive;
-            color: #E63946;
-            text-align: center;
-        }
+        h1 { font-family: 'Fredoka One', cursive; color: #E63946; text-align: center; }
+        h2 { font-family: 'Fredoka One', cursive; color: #2D3436; margin-bottom: 15px; }
+        h3 { font-family: 'Fredoka One', cursive; color: #6B705C; margin-bottom: 12px; }
         
-        h2 {
-            font-family: 'Fredoka One', cursive;
-            color: #2D3436;
-            margin-bottom: 15px;
-        }
-        
-        .subtitle {
-            font-family: 'Nunito', sans-serif;
-            color: #6B705C;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        
-        /* Colors from theme guide */
-        .sky-blue { background: #87CEEB; }
-        .sunshine { color: #FFE66D; }
-        .coral { color: #FF6B6B; }
-        .purple { color: #9B5DE5; }
-        .green { color: #7CB518; }
-        .gold { color: #FFD700; }
-        
-        /* Cover Page */
-        .cover {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            background: linear-gradient(180deg, #87CEEB 0%, #E8F4F8 100%);
-            border-radius: 20px;
-            padding: 40px;
-        }
-        
-        .cover h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .cover .subtitle {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-        
-        .cover img {
-            max-width: 300px;
-            margin: 20px 0;
-        }
-        
-        .cover .tagline {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.3em;
-            color: #9B5DE5;
-            margin-top: 20px;
-        }
-        
-        .name-line {
-            margin-top: 40px;
-            font-size: 1.2em;
-        }
-        
-        .name-line span {
-            border-bottom: 2px solid #2D3436;
-            padding: 0 100px;
-            margin-left: 10px;
-        }
-        
-        /* Letter Pages */
-        .letter-intro {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .letter-intro .big-letter {
-            font-family: 'Fredoka One', cursive;
-            font-size: 180px;
-            line-height: 1;
-            margin: 20px 0;
-        }
-        
-        .letter-intro .small-letter {
-            font-family: 'Nunito', sans-serif;
-            font-size: 120px;
-            font-weight: 800;
-            margin-left: 30px;
-        }
-        
-        .letter-intro .moogle-img {
-            max-width: 200px;
-            float: right;
-            margin: -50px 0 20px 20px;
-        }
-        
-        .letter-word {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2em;
-            color: #2D3436;
-            margin: 20px 0;
-        }
-        
-        .sound-box {
-            background: #FFE66D;
-            border-radius: 15px;
-            padding: 15px 30px;
-            display: inline-block;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-        
-        /* Tracing Section */
-        .tracing-section {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 15px;
-        }
-        
-        .tracing-section h3 {
-            font-family: 'Fredoka One', cursive;
-            color: #6B705C;
-            margin-bottom: 15px;
-        }
-        
-        .tracing-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin: 20px 0;
-        }
-        
-        .trace-letter {
-            font-family: 'Fredoka One', cursive;
-            font-size: 100px;
-            color: #ddd;
-            text-shadow: 2px 2px 0 #ccc;
-            letter-spacing: 30px;
-        }
-        
-        .trace-letter.dotted {
-            color: transparent;
-            -webkit-text-stroke: 3px #aaa;
-            text-stroke: 3px #aaa;
-        }
-        
-        /* Activity Pages */
-        .activity-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px dashed #87CEEB;
-        }
-        
-        .activity-header img {
-            width: 80px;
-            margin-right: 15px;
-        }
-        
-        .activity-header h2 {
-            flex: 1;
-        }
-        
-        .instruction {
-            background: #E8F4F8;
-            padding: 15px 20px;
-            border-radius: 10px;
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            border-left: 5px solid #87CEEB;
-        }
-        
-        /* Picture Grid */
-        .picture-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 30px 0;
-        }
-        
-        .picture-item {
-            text-align: center;
-            padding: 20px;
-            border: 3px solid #ddd;
-            border-radius: 15px;
-            background: #fafafa;
-        }
-        
-        .picture-item .emoji {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .picture-item .word {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #2D3436;
-        }
-        
-        /* Matching Activity */
-        .matching-section {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0;
-        }
-        
-        .matching-column {
-            width: 30%;
-        }
-        
-        .matching-item {
-            background: #f9f9f9;
-            border: 3px solid #ddd;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px 0;
-            text-align: center;
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5em;
-        }
-        
-        .matching-middle {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .matching-middle .dot {
-            width: 15px;
-            height: 15px;
-            background: #2D3436;
-            border-radius: 50%;
-            margin: 40px 0;
-        }
-        
-        /* CVC Word Section */
-        .cvc-section {
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .cvc-word {
-            font-family: 'Fredoka One', cursive;
-            font-size: 120px;
-            letter-spacing: 20px;
-            margin: 30px 0;
-        }
-        
-        .cvc-word span {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 10px;
-        }
-        
-        .cvc-word .letter-m { background: #87CEEB; }
-        .cvc-word .letter-o { background: #FFE66D; }
-        .cvc-word .letter-g { background: #7CB518; color: white; }
-        
-        .cvc-breakdown {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin: 30px 0;
-        }
-        
-        .cvc-breakdown .sound {
-            text-align: center;
-        }
-        
-        .cvc-breakdown .sound-letter {
-            font-family: 'Fredoka One', cursive;
-            font-size: 3em;
-            display: block;
-        }
-        
-        .cvc-breakdown .sound-text {
-            font-size: 1.5em;
-            color: #6B705C;
-        }
-        
-        /* Review/Coloring Page */
-        .coloring-section {
-            text-align: center;
-        }
-        
-        .coloring-section img {
-            max-width: 400px;
-            margin: 20px auto;
-            display: block;
-        }
-        
-        .letter-hunt {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .letter-hunt .letter-box {
-            width: 60px;
-            height: 60px;
-            border: 3px solid #ddd;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Fredoka One', cursive;
-            font-size: 2em;
-        }
-        
-        .letter-hunt .letter-box.target {
-            border-color: #E63946;
-            background: #fff0f0;
-        }
-        
-        /* Footer */
+        /* FOOTER - Consistent on ALL pages except cover */
         .page-footer {
             position: absolute;
-            bottom: 0.5in;
+            bottom: 0.35in;
             left: 0.5in;
             right: 0.5in;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 10px;
+            padding-top: 8px;
             border-top: 2px solid #eee;
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #999;
         }
+        .page-number { font-family: 'Fredoka One', cursive; color: #9B5DE5; font-size: 1.1em; }
         
-        .page-number {
-            font-family: 'Fredoka One', cursive;
-            color: #9B5DE5;
+        /* Content area - ensures footer has space */
+        .page-content {
+            min-height: calc(11in - 1.3in);
+            padding-bottom: 0.3in;
         }
+        
+        /* Cover */
+        .cover {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 100%; background: linear-gradient(180deg, #87CEEB 0%, #E8F4F8 100%);
+            border-radius: 20px; padding: 40px;
+        }
+        .cover h1 { font-size: 2.8em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .cover .subtitle { font-size: 1.4em; color: #6B705C; margin-bottom: 20px; text-align: center; }
+        .cover img { max-width: 280px; margin: 15px 0; }
+        .cover .tagline { font-family: 'Fredoka One', cursive; font-size: 1.2em; color: #9B5DE5; margin-top: 15px; }
+        .name-line { margin-top: 30px; font-size: 1.1em; }
+        .name-line span { border-bottom: 2px solid #2D3436; padding: 0 80px; margin-left: 10px; }
+        
+        /* Stars */
+        .stars { display: flex; justify-content: center; gap: 8px; margin: 15px 0; }
+        .star { width: 25px; height: 25px; }
+        
+        /* Letter intro */
+        .letter-intro { text-align: center; padding: 15px; }
+        .big-letter { font-family: 'Fredoka One', cursive; font-size: 140px; line-height: 1; margin: 5px 0; display: inline-block; }
+        .small-letter { font-family: 'Nunito', sans-serif; font-size: 90px; font-weight: 800; margin-left: 20px; display: inline-block; vertical-align: baseline; }
+        .moogle-img { max-width: 160px; float: right; margin: -20px 0 15px 15px; }
+        .letter-word { font-family: 'Fredoka One', cursive; font-size: 1.6em; color: #2D3436; margin: 10px 0; }
+        .sound-box { background: #FFE66D; border-radius: 12px; padding: 10px 20px; display: inline-block; font-size: 1.3em; font-weight: bold; margin: 8px 0; }
+        
+        /* Tracing */
+        .tracing-section { margin-top: 15px; padding: 12px; background: #f9f9f9; border-radius: 12px; }
+        .tracing-line { display: flex; align-items: center; justify-content: space-around; margin: 12px 0; }
+        .trace-letter { font-family: 'Fredoka One', cursive; font-size: 70px; color: #ccc; letter-spacing: 15px; }
+        
+        /* Activity header */
+        .activity-header { display: flex; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px dashed #87CEEB; }
+        .activity-header img { width: 60px; margin-right: 12px; }
+        .activity-header h2 { flex: 1; margin-bottom: 0; }
+        
+        /* Instruction */
+        .instruction { background: #E8F4F8; padding: 10px 15px; border-radius: 8px; font-size: 1.05em; margin-bottom: 15px; border-left: 4px solid #87CEEB; }
+        
+        /* Picture grid with actual images */
+        .picture-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0 20px 0; }
+        .picture-item { text-align: center; padding: 12px; border: 3px solid #ddd; border-radius: 12px; background: #fafafa; }
+        .picture-item img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 8px; image-rendering: pixelated; }
+        .picture-item .word { font-family: 'Nunito', sans-serif; font-size: 1.2em; font-weight: bold; color: #2D3436; }
+        
+        /* Matching */
+        .matching-section { display: flex; justify-content: space-between; margin: 20px 0; }
+        .matching-column { width: 30%; }
+        .matching-item { background: #f9f9f9; border: 3px solid #ddd; border-radius: 12px; padding: 15px; margin: 10px 0; text-align: center; font-family: 'Fredoka One', cursive; font-size: 2em; }
+        .matching-middle { width: 30%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .matching-middle .dot { width: 10px; height: 10px; background: #2D3436; border-radius: 50%; margin: 30px 0; }
+        
+        /* CVC */
+        .cvc-section { text-align: center; padding: 15px; }
+        .cvc-word { font-family: 'Fredoka One', cursive; font-size: 90px; letter-spacing: 12px; margin: 20px 0; }
+        .cvc-word span { display: inline-block; padding: 6px 15px; margin: 0 4px; border-radius: 8px; }
+        .cvc-word .letter-m { background: #87CEEB; }
+        .cvc-word .letter-o { background: #FFE66D; }
+        .cvc-word .letter-g { background: #7CB518; color: white; }
+        .cvc-breakdown { display: flex; justify-content: center; gap: 35px; margin: 20px 0; }
+        .cvc-breakdown .sound { text-align: center; }
+        .cvc-breakdown .sound-letter { font-family: 'Fredoka One', cursive; font-size: 2.2em; display: block; }
+        .cvc-breakdown .sound-text { font-size: 1.2em; color: #6B705C; }
+        
+        /* Letter hunt */
+        .letter-hunt { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0; }
+        .letter-hunt .letter-box { width: 50px; height: 50px; border: 3px solid #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka One', cursive; font-size: 1.6em; }
+        .letter-hunt .letter-box.target { border-color: #E63946; background: #fff0f0; }
         
         /* Encouragement */
-        .encouragement {
-            background: linear-gradient(135deg, #9B5DE5 0%, #E63946 100%);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.3em;
-            text-align: center;
-            margin: 20px auto;
-            display: inline-block;
-        }
-        
-        /* Stars/Rewards */
-        .stars {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .star {
-            font-size: 2em;
-            color: #FFD700;
-        }
-        
-        .star.empty {
-            color: #ddd;
-        }
+        .encouragement { background: linear-gradient(135deg, #9B5DE5 0%, #E63946 100%); color: white; padding: 10px 20px; border-radius: 50px; font-family: 'Fredoka One', cursive; font-size: 1.1em; text-align: center; margin: 12px auto; display: inline-block; }
     </style>
 </head>
 <body>
+
     <!-- PAGE 1: Cover -->
     <div class="page">
         <div class="cover">
-            <h1>🎈 Hooked on Moogle 🎈</h1>
+            <h1>Hooked on Moogle</h1>
             <p class="subtitle">A Phonics Adventure for Little Learners</p>
-            <img src="../assets/moogles/moogle-welcome.png" alt="Friendly Moogle waving hello">
+            <img src="../assets/moogles/moogle-welcome.png" alt="Friendly Moogle">
             <p class="tagline">"Learning to read is an adventure, kupo!"</p>
-            <div class="name-line">
-                This book belongs to: <span></span>
-            </div>
+            <div class="name-line">This book belongs to: <span></span></div>
             <div class="stars">
-                <span class="star">⭐</span>
-                <span class="star">⭐</span>
-                <span class="star">⭐</span>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
             </div>
         </div>
     </div>
 
     <!-- PAGE 2: Letter M Introduction -->
     <div class="page">
-        <div class="letter-intro">
-            <img src="../assets/moogles/moogle-letter-m.png" alt="Moogle holding letter M" class="moogle-img">
-            <h2>Meet the Letter</h2>
-            <div class="big-letter" style="color: #87CEEB;">M</div>
-            <span class="small-letter" style="color: #87CEEB;">m</span>
-            <p class="letter-word">M is for <strong>Moogle!</strong></p>
-            <div class="sound-box">M says /mmm/</div>
-            <p style="font-size: 1.2em; margin-top: 20px;">Put your lips together and hum: <strong>mmmmm</strong></p>
-        </div>
-        
-        <div class="tracing-section">
-            <h3>✏️ Trace the Letter M</h3>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">M M M M</span>
+        <div class="page-content">
+            <div class="letter-intro">
+                <img src="../assets/moogles/moogle-letter-m.png" alt="Moogle with M" class="moogle-img">
+                <h2>Meet the Letter</h2>
+                <div>
+                    <span class="big-letter" style="color: #87CEEB;">M</span>
+                    <span class="small-letter" style="color: #87CEEB;">m</span>
+                </div>
+                <p class="letter-word">M is for <strong>Moogle!</strong></p>
+                <div class="sound-box">M says /mmm/</div>
+                <p style="font-size: 1.1em; margin-top: 12px;">Put your lips together and hum: <strong>mmmmm</strong></p>
             </div>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">m m m m</span>
+            <div class="tracing-section">
+                <h3>Trace the Letter M</h3>
+                <div class="tracing-line"><span class="trace-letter">M M M M</span></div>
+                <div class="tracing-line"><span class="trace-letter">m m m m</span></div>
             </div>
         </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">2</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">2</span></div>
     </div>
 
     <!-- PAGE 3: Letter M Activity -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-pointing.png" alt="Moogle pointing">
-            <h2>Find the /m/ Sound!</h2>
-        </div>
-        
-        <div class="instruction">
-            🔍 Circle the pictures that start with the <strong>/m/</strong> sound, kupo!
-        </div>
-        
-        <div class="picture-grid">
-            <div class="picture-item">
-                <span class="emoji">🌙</span>
-                <span class="word">moon</span>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-pointing.png" alt="Moogle">
+                <h2>Find the /m/ Sound!</h2>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🐱</span>
-                <span class="word">cat</span>
+            <div class="instruction">Circle the pictures that start with the <strong>/m/</strong> sound, kupo!</div>
+            <div class="picture-grid">
+                <div class="picture-item">
+                    <img src="../assets/items/moon.png" alt="Moon">
+                    <div class="word">moon</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/cat.png" alt="Cat">
+                    <div class="word">cat</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/map.png" alt="Map">
+                    <div class="word">map</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/tree.png" alt="Tree">
+                    <div class="word">tree</div>
+                </div>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🗺️</span>
-                <span class="word">map</span>
-            </div>
-            <div class="picture-item">
-                <span class="emoji">🌳</span>
-                <span class="word">tree</span>
-            </div>
+            <div style="text-align: center;"><span class="encouragement">Kupo! You found them!</span></div>
         </div>
-        
-        <div class="encouragement">Kupo! You found them!</div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">3</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">3</span></div>
     </div>
 
     <!-- PAGE 4: Letter O Introduction -->
     <div class="page">
-        <div class="letter-intro">
-            <img src="../assets/moogles/moogle-letter-o.png" alt="Moogle holding letter O" class="moogle-img">
-            <h2>Meet the Letter</h2>
-            <div class="big-letter" style="color: #FF6B35;">O</div>
-            <span class="small-letter" style="color: #FF6B35;">o</span>
-            <p class="letter-word">O is for <strong>Orb!</strong></p>
-            <div class="sound-box">O says /ŏ/</div>
-            <p style="font-size: 1.2em; margin-top: 20px;">Open your mouth round like a circle: <strong>ŏŏŏ</strong></p>
-        </div>
-        
-        <div class="tracing-section">
-            <h3>✏️ Trace the Letter O</h3>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">O O O O</span>
+        <div class="page-content">
+            <div class="letter-intro">
+                <img src="../assets/moogles/moogle-letter-o.png" alt="Moogle with O" class="moogle-img">
+                <h2>Meet the Letter</h2>
+                <div>
+                    <span class="big-letter" style="color: #FF6B35;">O</span>
+                    <span class="small-letter" style="color: #FF6B35;">o</span>
+                </div>
+                <p class="letter-word">O is for <strong>Orb!</strong></p>
+                <div class="sound-box">O says /ah/</div>
+                <p style="font-size: 1.1em; margin-top: 12px;">Open your mouth round like a circle: <strong>ahh</strong></p>
             </div>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">o o o o</span>
+            <div class="tracing-section">
+                <h3>Trace the Letter O</h3>
+                <div class="tracing-line"><span class="trace-letter">O O O O</span></div>
+                <div class="tracing-line"><span class="trace-letter">o o o o</span></div>
             </div>
         </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">4</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">4</span></div>
     </div>
 
     <!-- PAGE 5: Letter O Activity -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-pointing.png" alt="Moogle pointing">
-            <h2>Find the /o/ Sound!</h2>
-        </div>
-        
-        <div class="instruction">
-            🔍 Circle the pictures that start with the <strong>/o/</strong> sound, kupo!
-        </div>
-        
-        <div class="picture-grid">
-            <div class="picture-item">
-                <span class="emoji">🐙</span>
-                <span class="word">octopus</span>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-pointing.png" alt="Moogle">
+                <h2>Find the /o/ Sound!</h2>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🍎</span>
-                <span class="word">apple</span>
+            <div class="instruction">Circle the pictures that start with the <strong>/o/</strong> sound, kupo!</div>
+            <div class="picture-grid">
+                <div class="picture-item">
+                    <img src="../assets/items/octopus.png" alt="Octopus">
+                    <div class="word">octopus</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/apple.png" alt="Apple">
+                    <div class="word">apple</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/owl.png" alt="Owl">
+                    <div class="word">owl</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/flower.png" alt="Flower">
+                    <div class="word">flower</div>
+                </div>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🦉</span>
-                <span class="word">owl</span>
-            </div>
-            <div class="picture-item">
-                <span class="emoji">🌺</span>
-                <span class="word">flower</span>
-            </div>
+            <div style="text-align: center;"><span class="encouragement">Great work, kupo!</span></div>
         </div>
-        
-        <div class="encouragement">Great work, kupo!</div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">5</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">5</span></div>
     </div>
+
     <!-- PAGE 6: Letter G Introduction -->
     <div class="page">
-        <div class="letter-intro">
-            <img src="../assets/moogles/moogle-letter-g.png" alt="Moogle holding letter G" class="moogle-img">
-            <h2>Meet the Letter</h2>
-            <div class="big-letter" style="color: #7CB518;">G</div>
-            <span class="small-letter" style="color: #7CB518;">g</span>
-            <p class="letter-word">G is for <strong>Gil!</strong></p>
-            <div class="sound-box">G says /g/</div>
-            <p style="font-size: 1.2em; margin-top: 20px;">Make a sound in your throat: <strong>guh guh guh</strong></p>
-        </div>
-        
-        <div class="tracing-section">
-            <h3>✏️ Trace the Letter G</h3>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">G G G G</span>
+        <div class="page-content">
+            <div class="letter-intro">
+                <img src="../assets/moogles/moogle-letter-g.png" alt="Moogle with G" class="moogle-img">
+                <h2>Meet the Letter</h2>
+                <div>
+                    <span class="big-letter" style="color: #7CB518;">G</span>
+                    <span class="small-letter" style="color: #7CB518;">g</span>
+                </div>
+                <p class="letter-word">G is for <strong>Gil!</strong></p>
+                <div class="sound-box">G says /g/</div>
+                <p style="font-size: 1.1em; margin-top: 12px;">Make a sound in your throat: <strong>guh guh guh</strong></p>
             </div>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">g g g g</span>
+            <div class="tracing-section">
+                <h3>Trace the Letter G</h3>
+                <div class="tracing-line"><span class="trace-letter">G G G G</span></div>
+                <div class="tracing-line"><span class="trace-letter">g g g g</span></div>
             </div>
         </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">6</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">6</span></div>
     </div>
 
     <!-- PAGE 7: Letter G Activity -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-pointing.png" alt="Moogle pointing">
-            <h2>Find the /g/ Sound!</h2>
-        </div>
-        
-        <div class="instruction">
-            🔍 Circle the pictures that start with the <strong>/g/</strong> sound, kupo!
-        </div>
-        
-        <div class="picture-grid">
-            <div class="picture-item">
-                <span class="emoji">🍇</span>
-                <span class="word">grapes</span>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-pointing.png" alt="Moogle">
+                <h2>Find the /g/ Sound!</h2>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🐕</span>
-                <span class="word">dog</span>
+            <div class="instruction">Circle the pictures that start with the <strong>/g/</strong> sound, kupo!</div>
+            <div class="picture-grid">
+                <div class="picture-item">
+                    <img src="../assets/items/grapes.png" alt="Grapes">
+                    <div class="word">grapes</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/dog.png" alt="Dog">
+                    <div class="word">dog</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/gift.png" alt="Gift">
+                    <div class="word">gift</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/sun.png" alt="Sun">
+                    <div class="word">sun</div>
+                </div>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🎁</span>
-                <span class="word">gift</span>
-            </div>
-            <div class="picture-item">
-                <span class="emoji">☀️</span>
-                <span class="word">sun</span>
-            </div>
+            <div style="text-align: center;"><span class="encouragement">You're doing amazing, kupo!</span></div>
         </div>
-        
-        <div class="encouragement">You're doing amazing, kupo!</div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">7</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">7</span></div>
     </div>
 
     <!-- PAGE 8: M, O, G Review - Matching -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-kupo.png" alt="Moogle saying Kupo">
-            <h2>Match the Letters!</h2>
-        </div>
-        
-        <div class="instruction">
-            ✏️ Draw a line to match the uppercase letter to its lowercase friend, kupo!
-        </div>
-        
-        <div class="matching-section">
-            <div class="matching-column">
-                <div class="matching-item" style="background: #E8F4F8;">M</div>
-                <div class="matching-item" style="background: #FFF4E8;">O</div>
-                <div class="matching-item" style="background: #E8F8E8;">G</div>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-kupo.png" alt="Moogle">
+                <h2>Match the Letters!</h2>
             </div>
-            
-            <div class="matching-middle">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+            <div class="instruction">Draw a line to match the uppercase letter to its lowercase friend, kupo!</div>
+            <div class="matching-section">
+                <div class="matching-column">
+                    <div class="matching-item" style="background: #E8F4F8;">M</div>
+                    <div class="matching-item" style="background: #FFF4E8;">O</div>
+                    <div class="matching-item" style="background: #E8F8E8;">G</div>
+                </div>
+                <div class="matching-middle">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="matching-column">
+                    <div class="matching-item" style="background: #E8F8E8;">g</div>
+                    <div class="matching-item" style="background: #E8F4F8;">m</div>
+                    <div class="matching-item" style="background: #FFF4E8;">o</div>
+                </div>
             </div>
-            
-            <div class="matching-column">
-                <div class="matching-item" style="background: #E8F8E8;">g</div>
-                <div class="matching-item" style="background: #E8F4F8;">m</div>
-                <div class="matching-item" style="background: #FFF4E8;">o</div>
+            <div style="text-align: center; margin-top: 20px;">
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 24 24" fill="#ddd"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#ddd"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#ddd"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                </div>
+                <p style="color: #6B705C; font-size: 0.95em;">Color a star for each match you make!</p>
             </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 30px;">
-            <div class="stars">
-                <span class="star empty">⭐</span>
-                <span class="star empty">⭐</span>
-                <span class="star empty">⭐</span>
-            </div>
-            <p style="color: #6B705C;">Color a star for each match you make!</p>
-        </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">8</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">8</span></div>
     </div>
 
     <!-- PAGE 9: Letter K Introduction -->
     <div class="page">
-        <div class="letter-intro">
-            <img src="../assets/moogles/moogle-letter-k.png" alt="Moogle holding letter K" class="moogle-img">
-            <h2>Meet the Letter</h2>
-            <div class="big-letter" style="color: #9B5DE5;">K</div>
-            <span class="small-letter" style="color: #9B5DE5;">k</span>
-            <p class="letter-word">K is for <strong>Kupo!</strong></p>
-            <div class="sound-box">K says /k/</div>
-            <p style="font-size: 1.2em; margin-top: 20px;">Make a clicking sound: <strong>kuh kuh kuh</strong></p>
-        </div>
-        
-        <div class="tracing-section">
-            <h3>✏️ Trace the Letter K</h3>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">K K K K</span>
+        <div class="page-content">
+            <div class="letter-intro">
+                <img src="../assets/moogles/moogle-letter-k.png" alt="Moogle with K" class="moogle-img">
+                <h2>Meet the Letter</h2>
+                <div>
+                    <span class="big-letter" style="color: #9B5DE5;">K</span>
+                    <span class="small-letter" style="color: #9B5DE5;">k</span>
+                </div>
+                <p class="letter-word">K is for <strong>Kupo!</strong></p>
+                <div class="sound-box">K says /k/</div>
+                <p style="font-size: 1.1em; margin-top: 12px;">Make a clicking sound: <strong>kuh kuh kuh</strong></p>
             </div>
-            <div class="tracing-line">
-                <span class="trace-letter dotted">k k k k</span>
+            <div class="tracing-section">
+                <h3>Trace the Letter K</h3>
+                <div class="tracing-line"><span class="trace-letter">K K K K</span></div>
+                <div class="tracing-line"><span class="trace-letter">k k k k</span></div>
             </div>
         </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">9</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">9</span></div>
     </div>
 
     <!-- PAGE 10: Letter K Activity -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-pointing.png" alt="Moogle pointing">
-            <h2>Find the /k/ Sound!</h2>
-        </div>
-        
-        <div class="instruction">
-            🔍 Circle the pictures that start with the <strong>/k/</strong> sound, kupo!
-        </div>
-        
-        <div class="picture-grid">
-            <div class="picture-item">
-                <span class="emoji">🪁</span>
-                <span class="word">kite</span>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-pointing.png" alt="Moogle">
+                <h2>Find the /k/ Sound!</h2>
             </div>
-            <div class="picture-item">
-                <span class="emoji">🐸</span>
-                <span class="word">frog</span>
-            </div>
-            <div class="picture-item">
-                <span class="emoji">🔑</span>
-                <span class="word">key</span>
-            </div>
-            <div class="picture-item">
-                <span class="emoji">🎈</span>
-                <span class="word">balloon</span>
-            </div>
-        </div>
-        
-        <div class="encouragement">Kupo-tastic!</div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">10</span>
-        </div>
-    </div>
-    <!-- PAGE 11: CVC Word - MOG -->
-    <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-welcome.png" alt="Moogle" style="width: 100px;">
-            <h2>Let's Read a Word!</h2>
-        </div>
-        
-        <div class="cvc-section">
-            <p style="font-size: 1.3em; margin-bottom: 20px;">Put the sounds together to read the word:</p>
-            
-            <div class="cvc-breakdown">
-                <div class="sound">
-                    <span class="sound-letter" style="color: #87CEEB;">M</span>
-                    <span class="sound-text">/mmm/</span>
+            <div class="instruction">Circle the pictures that start with the <strong>/k/</strong> sound, kupo!</div>
+            <div class="picture-grid">
+                <div class="picture-item">
+                    <img src="../assets/items/kite.png" alt="Kite">
+                    <div class="word">kite</div>
                 </div>
-                <div class="sound">
-                    <span class="sound-letter" style="color: #FF6B35;">O</span>
-                    <span class="sound-text">/ŏ/</span>
+                <div class="picture-item">
+                    <img src="../assets/items/frog.png" alt="Frog">
+                    <div class="word">frog</div>
                 </div>
-                <div class="sound">
-                    <span class="sound-letter" style="color: #7CB518;">G</span>
-                    <span class="sound-text">/g/</span>
+                <div class="picture-item">
+                    <img src="../assets/items/key.png" alt="Key">
+                    <div class="word">key</div>
+                </div>
+                <div class="picture-item">
+                    <img src="../assets/items/balloon.png" alt="Balloon">
+                    <div class="word">balloon</div>
                 </div>
             </div>
-            
-            <div style="font-size: 1.5em; margin: 20px 0;">➡️ Blend them together: <strong>/mmm/ - /ŏ/ - /g/</strong></div>
-            
-            <div class="cvc-word">
-                <span class="letter-m">M</span><span class="letter-o">O</span><span class="letter-g">G</span>
-            </div>
-            
-            <div class="encouragement">You just read "MOG"! That's a moogle's name!</div>
-            
-            <img src="../assets/moogles/moogle-kupo.png" alt="Happy Moogle" style="max-width: 200px; margin-top: 20px;">
+            <div style="text-align: center;"><span class="encouragement">Kupo-tastic!</span></div>
         </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">11</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">10</span></div>
     </div>
 
-    <!-- PAGE 12: Fun Review & Coloring -->
+    <!-- PAGE 11: CVC Word - MOG -->
     <div class="page">
-        <div class="activity-header">
-            <img src="../assets/moogles/moogle-kupo.png" alt="Moogle saying Kupo">
-            <h2>Letter Hunt!</h2>
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-welcome.png" alt="Moogle" style="width: 80px;">
+                <h2>Let's Read a Word!</h2>
+            </div>
+            <div class="cvc-section">
+                <p style="font-size: 1.2em; margin-bottom: 15px;">Put the sounds together to read the word:</p>
+                <div class="cvc-breakdown">
+                    <div class="sound"><span class="sound-letter" style="color: #87CEEB;">M</span><span class="sound-text">/mmm/</span></div>
+                    <div class="sound"><span class="sound-letter" style="color: #FF6B35;">O</span><span class="sound-text">/ah/</span></div>
+                    <div class="sound"><span class="sound-letter" style="color: #7CB518;">G</span><span class="sound-text">/g/</span></div>
+                </div>
+                <p style="font-size: 1.3em; margin: 15px 0;">Blend them together: <strong>/mmm/ - /ah/ - /g/</strong></p>
+                <div class="cvc-word"><span class="letter-m">M</span><span class="letter-o">O</span><span class="letter-g">G</span></div>
+                <div class="encouragement">You just read "MOG"! That's a moogle's name!</div>
+                <img src="../assets/moogles/moogle-kupo.png" alt="Happy Moogle" style="max-width: 150px; margin-top: 15px;">
+            </div>
         </div>
-        
-        <div class="instruction">
-            🔍 Find and circle all the letters M, O, G, and K in the boxes below!
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">11</span></div>
+    </div>
+
+    <!-- PAGE 12: Fun Review & Letter Hunt -->
+    <div class="page">
+        <div class="page-content">
+            <div class="activity-header">
+                <img src="../assets/moogles/moogle-kupo.png" alt="Moogle">
+                <h2>Letter Hunt!</h2>
+            </div>
+            <div class="instruction">Find and circle all the letters M, O, G, and K in the boxes below!</div>
+            <div class="letter-hunt">
+                <div class="letter-box target">M</div>
+                <div class="letter-box">B</div>
+                <div class="letter-box target">O</div>
+                <div class="letter-box">P</div>
+                <div class="letter-box target">G</div>
+                <div class="letter-box">R</div>
+                <div class="letter-box target">K</div>
+                <div class="letter-box">S</div>
+                <div class="letter-box">A</div>
+                <div class="letter-box target">M</div>
+                <div class="letter-box">T</div>
+                <div class="letter-box target">O</div>
+                <div class="letter-box">N</div>
+                <div class="letter-box target">G</div>
+                <div class="letter-box">D</div>
+                <div class="letter-box target">K</div>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+                <h3 style="margin-bottom: 10px;">Color the Moogle!</h3>
+                <img src="../assets/moogles/moogle-welcome.png" alt="Moogle to color" style="max-width: 180px; opacity: 0.25; border: 3px dashed #ddd; border-radius: 12px; padding: 8px;">
+                <p style="color: #999; font-size: 0.85em; margin-top: 8px;">(Print this page and color your moogle friend!)</p>
+            </div>
+            <div style="text-align: center;">
+                <span class="encouragement">You finished the whole book! Kupo!</span>
+            </div>
+            <div class="stars" style="margin-top: 12px;">
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#FFD700"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+            </div>
         </div>
-        
-        <div class="letter-hunt">
-            <div class="letter-box target">M</div>
-            <div class="letter-box">B</div>
-            <div class="letter-box target">O</div>
-            <div class="letter-box">P</div>
-            <div class="letter-box target">G</div>
-            <div class="letter-box">R</div>
-            <div class="letter-box target">K</div>
-            <div class="letter-box">S</div>
-            <div class="letter-box">A</div>
-            <div class="letter-box target">M</div>
-            <div class="letter-box">T</div>
-            <div class="letter-box target">O</div>
-            <div class="letter-box">N</div>
-            <div class="letter-box target">G</div>
-            <div class="letter-box">D</div>
-            <div class="letter-box target">K</div>
-        </div>
-        
-        <div style="text-align: center; margin: 30px 0;">
-            <h3 style="font-family: 'Fredoka One', cursive; color: #6B705C; margin-bottom: 15px;">
-                🎨 Color the Moogle!
-            </h3>
-            <img src="../assets/moogles/moogle-welcome.png" alt="Moogle to color" style="max-width: 250px; opacity: 0.3; border: 3px dashed #ddd; border-radius: 15px; padding: 10px;">
-            <p style="color: #999; font-size: 0.9em; margin-top: 10px;">
-                (Print this page and color your moogle friend!)
-            </p>
-        </div>
-        
-        <div class="encouragement">🎉 You finished the whole book! Kupo! 🎉</div>
-        
-        <div class="stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-        </div>
-        
-        <div class="page-footer">
-            <span>Hooked on Moogle</span>
-            <span class="page-number">12</span>
-        </div>
+        <div class="page-footer"><span>Hooked on Moogle</span><span class="page-number">12</span></div>
     </div>
 
 </body>
